@@ -17,6 +17,27 @@ The benchmark scored **6,575 hours per area** from January to September 2020. Hi
 
 The German transfer into Austria improved on weekly persistence in point error and had narrower intervals with lower coverage than the Austrian model. The report includes interval widths, pinball scores, high-load and daylight-saving diagnostics and feature-group ablations. [Measured metrics](reports/holdout-metrics.json)
 
+## Visual Results Gallery
+
+![Held-out MASE by target area](figures/results/forecast-comparison.png)
+
+All models use identical held-out hours in each target country.
+
+![Monthly mean absolute error](figures/results/monthly-errors.png)
+
+Monthly summaries show where transfer and local-model errors diverge.
+
+![Empirical interval coverage and mean width](figures/results/interval-calibration.png)
+
+Transfer into Austria lowers coverage to 73.6% and narrows the interval. The nominal target is 80%.
+
+Recreate the gallery from the reports or run outputs listed below.
+
+```sh
+python -m pip install -r requirements-visuals.txt
+python plot_results.py
+```
+
 ## Method
 
 ```mermaid
