@@ -1,0 +1,5 @@
+# Data
+
+Open Power System Data, Time Series snapshot **2020-10-06**, hourly single-index CSV 130,339,665 bytes and 50,401 rows. SHA-256 `6a7f2bc571314cbf9c321cc03437691cd4be95c3a6f075e60ff99e8035c704c8`. Consumed columns are `utc_timestamp` and the `AT_` and `DE_load_actual_entsoe_transparency` fields in MW. The load series originate with ENTSO-E Transparency. The benchmark reads only timestamps and selected columns into per-area histories. [Snapshot, data schema and attribution](https://data.open-power-system-data.org/time_series/2020-10-06)
+
+Records are checked for duplicate and out-of-order timestamps, hourly alignment, and finite positive measurements. Missing readings are kept as absent keys and remove any record that depends on a missing lag. UTC ordering prevents conflation of repeated local wall-clock hours in autumn. Berlin and Vienna IANA zones specify the date and the issue time. The raw CSV and hourly predictions stay local. OPSD cites original source terms by dataset. [OPSD license information](https://github.com/Open-Power-System-Data/time_series/blob/master/LICENSE.md)
